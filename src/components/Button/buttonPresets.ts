@@ -6,7 +6,7 @@ interface ButtonUI {
   container: TouchableOpacityBoxProps;
   content: ThemeColors;
 }
-
+//Record: Para mapear uma interface pela outra;
 export const buttonPresets: Record<
   ButtonPreset,
   {

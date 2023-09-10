@@ -12,6 +12,7 @@ interface TextProps extends SRTextProps {
   italic?: boolean;
   semiBold?: boolean;
 }
+
 export function Text({
   children,
   preset = 'paragraphMedium',
@@ -60,6 +61,7 @@ function getFontFamily(
       return $fontFamily.regular;
   }
 }
+
 type TextVariants =
   | 'headingLarge'
   | 'headingMedium'
@@ -69,6 +71,7 @@ type TextVariants =
   | 'paragraphSmall'
   | 'paragraphCaption'
   | 'paragraphCaptionSmall';
+
 const $fontSizes: Record<TextVariants, TextStyle> = {
   headingLarge: {fontSize: 32, lineHeight: 38.4},
   headingMedium: {fontSize: 22, lineHeight: 26.4},
@@ -79,6 +82,7 @@ const $fontSizes: Record<TextVariants, TextStyle> = {
   paragraphCaption: {fontSize: 12, lineHeight: 16.8},
   paragraphCaptionSmall: {fontSize: 10, lineHeight: 14},
 };
+
 const $fontFamily = {
   black: 'Satoshi-Black',
   blackItalic: 'Satoshi-BlackItalic',

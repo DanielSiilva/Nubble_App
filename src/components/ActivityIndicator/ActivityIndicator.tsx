@@ -9,6 +9,7 @@ import {Theme, ThemeColors} from '../../theme/theme';
 interface Props extends Omit<ActivityIndicatorProps, 'color'> {
   color: ThemeColors;
 }
+
 export function ActivityIndicator({color}: Props) {
   const {colors} = useTheme<Theme>();
 
