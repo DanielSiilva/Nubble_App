@@ -5,6 +5,7 @@ import {
   ActivityIndicatorProps,
 } from 'react-native';
 import {Theme, ThemeColors} from '../../theme/theme';
+
 //Omit: serve para omitir alguma propriedade da interface em questão;
 interface Props extends Omit<ActivityIndicatorProps, 'color'> {
   color: ThemeColors;
