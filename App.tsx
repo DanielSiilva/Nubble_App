@@ -1,12 +1,10 @@
 import {ThemeProvider} from '@shopify/restyle';
 import React from 'react';
 import {SafeAreaView, View} from 'react-native';
-import {Button} from './src/components/Button/Button';
 
 import {Text} from './src/components/Text/Text';
 import {theme} from './src/theme/theme';
-import {EyeOffIcon} from './src/assets/Icons/EyeOffIcon';
-import {EyeOnIcon} from './src/assets/Icons/EyeOnIcon';
+import {Icon} from './src/components/Icon/Icon';
 
 function App(): JSX.Element {
   return (
@@ -17,14 +15,19 @@ function App(): JSX.Element {
             Coffstack
           </Text>
 
-          <Button title="Primary" marginBottom="s12" />
-          <Button disabled title="Primary" marginBottom="s12" />
-          <Button preset="outline" title="Outline" marginBottom="s12" loading />
-
-          <Button disabled preset="outline" title="Lading" />
-
-          <EyeOffIcon size={20} color="#Ffff" />
-          <EyeOnIcon size={20} color="red" />
+          <Icon name="eyeOn" color="gray5" size={50} />
+          <Icon name="chevronRight" size={50} />
+          <Icon name="heartFill" color="buttonPrimary" />
+          <Icon name="profile" size={50} />
+          <Icon name="profileFill" size={50} />
+          <Icon name="heart" size={50} />
+          <Icon name="bellOn" color="carrotSecondary" size={50} />
+          <Icon name="newPost" size={50} />
+          <Icon name="camera" size={50} />
+          <Icon name="chat" size={50} />
+          <Icon name="chatOn" color="error" size={50} />
+          <Icon name="flashOff" size={50} />
+          <Icon name="flashOn" size={50} />
         </View>
       </SafeAreaView>
     </ThemeProvider>

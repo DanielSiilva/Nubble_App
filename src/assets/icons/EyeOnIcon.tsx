@@ -1,13 +1,9 @@
+import React from 'react';
 import {Svg, Path} from 'react-native-svg';
+import {IconBase} from '../../components/Icon/Icon';
 
-interface Props {
-  size?: number;
-  color?: string;
-}
-
-export function EyeOnIcon({size = 20, color = 'black'}: Props) {
+export function EyeOnIcon({size = 20, color = 'black'}: IconBase) {
   return (
-    // eslint-disable-next-line react/react-in-jsx-scope
     <Svg width={size} height={size} viewBox="0 0 20 20" fill="none">
       <Path
         fillRule="evenodd"
