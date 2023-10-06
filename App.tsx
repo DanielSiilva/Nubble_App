@@ -2,9 +2,8 @@ import {ThemeProvider} from '@shopify/restyle';
 import React from 'react';
 import {SafeAreaView, View} from 'react-native';
 
-import {Box} from './src/components/Box/Box';
 import {Button} from './src/components/Button/Button';
-//import {Icon} from './src/components/Icon/Icon';
+import {Icon} from './src/components/Icon/Icon';
 
 import {Text} from './src/components/Text/Text';
 import {TextInput} from './src/components/TextInput/TextInput';
@@ -22,18 +21,21 @@ function App(): JSX.Element {
             Digite seu e-mail e senha para entrar
           </Text>
 
-          <Box mb="s20">
-            <TextInput
-              errorMessage="mensagem de error"
-              label="E-mail"
-              placeholder="Digite seu e-mail"
-            />
-          </Box>
-          <Box>
-            <TextInput label="Senha" placeholder="Digite sua senha" />
-          </Box>
+          <TextInput
+            errorMessage="mensagem de error"
+            label="E-mail"
+            placeholder="Digite seu e-mail"
+            boxProps={{mb: 's20'}}
+          />
 
-          <Text color="primary" preset="paragraphSmall" bold mt="s10">
+          <TextInput
+            label="Senha"
+            placeholder="Digite sua senha"
+            RightComponent={<Icon color="gray2" name="eyeOn" />}
+            boxProps={{mb: 's10'}}
+          />
+
+          <Text color="primary" preset="paragraphSmall" bold>
             Esqueci minha senha
           </Text>
 
