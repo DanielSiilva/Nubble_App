@@ -3,8 +3,8 @@ import React from 'react';
 import {Text} from '../../../components/Text/Text';
 import {TextInput} from '../../../components/TextInput/TextInput';
 import {Button} from '../../../components/Button/Button';
-import {Icon} from '../../../components/Icon/Icon';
 import {Screen} from '../../../components/Screen/Screen';
+import {PasswordInput} from '../../../components/PasswordInput/PasswordInput';
 
 export function LoginScreen() {
   return (
@@ -23,10 +23,9 @@ export function LoginScreen() {
         boxProps={{mb: 's20'}}
       />
 
-      <TextInput
+      <PasswordInput
         label="Senha"
         placeholder="Digite sua senha"
-        RightComponent={<Icon color="gray2" name="eyeOn" />}
         boxProps={{mb: 's10'}}
       />
 
