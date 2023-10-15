@@ -5,18 +5,21 @@ import {RootStackParamList} from '../../../routes/Routes';
 import {Text} from '../../../components/Text/Text';
 import {TextInput} from '../../../components/TextInput/TextInput';
 import {Button} from '../../../components/Button/Button';
+import {useResetNavigationSuccess} from '../../../hooks/useResetNavigationSuccess';
 
 type ScreeProps = NativeStackScreenProps<
   RootStackParamList,
   'ForgotPasswordScreen'
 >;
-
+/* eslint-disable @typescript-eslint/no-unused-vars */
 export function ForgotPasswordScreen({navigation}: ScreeProps) {
+  const {reset} = useResetNavigationSuccess();
+
   function submitForm() {
-    navigation.navigate('SuccessScreen', {
-      title: `Enviamos as intruções para eu ${'/n'} e-mail`,
+    reset({
+      title: `Enviamos as instruções ${'\n'}para seu e-mail`,
       description:
-        'Clique no link enviado no seu e-mail para recuperar a sua senha',
+        'Clique no link enviado no seu e-mail para recuperar sua senha',
       icon: {
         name: 'messageRound',
         color: 'primary',
@@ -24,7 +27,7 @@ export function ForgotPasswordScreen({navigation}: ScreeProps) {
     });
   }
   return (
-    <Screen>
+    <Screen canGoBack>
       <Text preset="headingLarge" mb="s16">
         esqueci minha senha
       </Text>
