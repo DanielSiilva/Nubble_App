@@ -1,4 +1,5 @@
 import React from 'react';
+import {useForm, Controller} from 'react-hook-form';
 
 import {Text} from '../../../components/Text/Text';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
@@ -7,15 +8,32 @@ import {Button} from '../../../components/Button/Button';
 import {Screen} from '../../../components/Screen/Screen';
 import {PasswordInput} from '../../../components/PasswordInput/PasswordInput';
 import {RootStackParamList} from '../../../routes/Routes';
+import {Alert} from 'react-native';
+
+type LoginFormType = {
+  email: string;
+  password: string;
+};
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>;
 
 export function LoginScreen({navigation}: ScreenProps) {
+  const {control, formState, handleSubmit} = useForm<LoginFormType>({
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+  });
+
   function navigateToSignUpScreen() {
     navigation.navigate('SignUpScreen');
   }
   function navigateToForgotPasswordScreen() {
     navigation.navigate('ForgotPasswordScreen');
+  }
+
+  function submitForm({email, password}: LoginFormType) {
+    Alert.alert('Login', `${email}`);
   }
   return (
     <Screen>
@@ -26,11 +44,19 @@ export function LoginScreen({navigation}: ScreenProps) {
         Digite seu e-mail e senha para entrar
       </Text>
 
-      <TextInput
-        errorMessage="mensagem de error"
-        label="E-mail"
-        placeholder="Digite seu e-mail"
-        boxProps={{mb: 's20'}}
+      <Controller
+        control={control}
+        name="email"
+        render={({field, fieldState}) => (
+          <TextInput
+            value={field.value}
+            onChangeText={field.onChange}
+            errorMessage={fieldState.error?.message}
+            label="E-mail"
+            placeholder="Digite seu e-mail"
+            boxProps={{mb: 's20'}}
+          />
+        )}
       />
 
       <PasswordInput
@@ -47,7 +73,11 @@ export function LoginScreen({navigation}: ScreenProps) {
         Esqueci minha senha
       </Text>
 
-      <Button marginTop="s48" title="Entrar" />
+      <Button
+        marginTop="s48"
+        title="Entrar"
+        onPress={handleSubmit(submitForm)}
+      />
       <Button
         onPress={navigateToSignUpScreen}
         preset="outline"
