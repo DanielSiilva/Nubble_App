@@ -23,12 +23,6 @@ export function Screen({
   const {colors} = useAppTheme();
 
   const navigation = useNavigation();
-
-  console.log({
-    device: Platform.OS,
-    bottom,
-  });
-
   const Container = scrollable ? ScrollViewContainer : ViewContainer;
   return (
     <KeyboardAvoidingView
