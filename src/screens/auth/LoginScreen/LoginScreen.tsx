@@ -23,7 +23,7 @@ export function LoginScreen({navigation}: ScreenProps) {
   });
 
   function submitForm({email, password}: LoginSchema) {
-    Alert.alert(`Email: ${email} ${`\n`} Senha: ${password}`);
+    Alert.alert(`Email: ${email} ${'\n'} Senha: ${password}`);
   }
 
   function navigateToSignUpScreen() {
