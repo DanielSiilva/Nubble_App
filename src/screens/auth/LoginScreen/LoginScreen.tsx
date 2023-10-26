@@ -2,10 +2,10 @@ import React from 'react';
 import {Alert} from 'react-native';
 import {useForm} from 'react-hook-form';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../../routes/Routes';
 
 import {zodResolver} from '@hookform/resolvers/zod';
 import {LoginSchema, loginSchema} from './loginSchema';
+import {RootStackParamList} from '@routes';
 
 import {
   Text,
