@@ -50,7 +50,6 @@ export function TextInput({
             ref={inputRef}
             placeholderTextColor={colors.gray2}
             style={$textInputStyle}
-            color={colors.grayBlack}
             {...rnTextInputProps}
           />
           {RightComponent && (
