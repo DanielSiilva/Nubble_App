@@ -11,8 +11,8 @@ interface ProfileAvatarProps {
 
 export function ProfileAvatar({
   imageUrl,
-  borderRadius,
-  size,
+  borderRadius = 14,
+  size = 32,
 }: ProfileAvatarProps) {
   return (
     <Image
