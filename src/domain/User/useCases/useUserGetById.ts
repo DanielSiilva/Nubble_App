@@ -16,7 +16,7 @@ export function useUserGetById(id: number) {
     } catch (er) {
       setError(true);
     } finally {
-      setLoading(true);
+      setLoading(false);
     }
   }, [id]);
 
